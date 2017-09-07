@@ -16,14 +16,14 @@
 		    var text=document.getElementById("text"),
 			    n=1,
 				shine=function(){
-                 n++;
-                 if(n%2==0){
-                    text.innerHTML='★★★闪烁★★★';
-                }else{
-                    text.innerHTML='☆☆☆闪烁☆☆☆'; 	                
-                }             
-            };
-            setInterval("shine()",500);
-		</script>
+                 		n++;
+                 			if(n%2==0){
+                    			text.innerHTML='★★★闪烁★★★';
+                			}else{
+                    			text.innerHTML='☆☆☆闪烁☆☆☆'; 	                
+                			}             
+            			};
+            	setInterval("shine()",500);
+	</script>
 </body>
 </html>
