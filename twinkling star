@@ -18,11 +18,13 @@
 				shine=function(){
                  		n++;
                  			if(n%2==0){
+					//n除2没有余数，虚实相间显现展现出闪烁效果
                     			text.innerHTML='★★★闪烁★★★';
                 			}else{
                     			text.innerHTML='☆☆☆闪烁☆☆☆'; 	                
                 			}             
             			};
+		//每隔0.5秒变换一次
             	setInterval("shine()",500);
 	</script>
 </body>
