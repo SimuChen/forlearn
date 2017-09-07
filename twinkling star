@@ -5,11 +5,6 @@
         <title>简单的闪烁效果</title>
         <style type="text/css">
             div{
-                width:200px;
-                height:200px;
-                line-height:200px;
-                border:2px solid gray;
-                text-align:center;
                 color:red;
             }
         </style>
