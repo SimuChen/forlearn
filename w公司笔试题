@@ -1,0 +1,84 @@
+1.用JavaScript写一个名为getUrlParam方法，要求获取浏览器当前URL中有指定参数。
+<script>
+    alert(getUrlParam('name'));
+
+    // 根据参数名称获取value    
+    function getUrlParam(paramKey) {
+        var sURLVariables, i, sParameterName, sPageURL = window.location.search.substring(1);
+        if (sPageURL) {
+            sURLVariables = sPageURL.split("&");
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split("=");
+                if (sParameterName[0] === paramKey) return sParameterName[1]
+            }
+        }
+    }
+
+</script>
+
+
+2.JS中call与apply的意义，用法和区别。
+call和apply大概的用法差不多，我们可以将call()和apply()看做是某个对象的方法，通过调用方法的形式来间接调用函数。
+其实就是更改对象的内部指针，即改变对象的this指向的内容。这在面向对象的js编程过程中有时是很有用的。
+
+对于apply和call两者在作用上是相同的，但两者在参数上有区别的。
+对于第一个参数意义都一样，但对第二个参数：
+apply传入的是一个参数数组，也就是将多个参数组合成为一个数组传入，而call则作为call的参数传入（从第二个参数开始）。
+如 func.call(func1,var1,var2,var3)对应的apply写法为：func.apply(func1,[var1,var2,var3])
+同时使用apply的好处是可以直接将当前函数的arguments对象作为apply的第二个参数传入
+
+
+3.JS中this有几种意义，请描述出对应场景。
+  （1）.在一般函数方法中使用 this 指代全局对象
+function test(){
+　　　　this.x = 1;
+　　　　alert(this.x);
+　　}
+　　test(); // 1
+  
+  （2）.作为对象方法调用，this 指代上级对象
+  function test(){
+　　alert(this.x);
+}
+  var o = {};
+  o.x = 1;
+  o.m = test;
+  o.m(); // 1
+
+（3）.作为构造函数调用，this 指代new 出的对象
+function test(){
+　　　　this.x = 1;
+　　}
+　　var o = new test();
+　　alert(o.x); // 1
+    //运行结果为1。为了表明这时this不是全局对象，我对代码做一些改变：
+　　var x = 2;
+　　function test(){
+　　　　this.x = 1;
+　　}
+　　var o = new test();
+　　alert(x); //2
+  
+  （4）.apply 调用 ，apply方法作用是改变函数的调用对象，此方法的第一个参数为改变后调用这个函数的对象，this指代第一个参数
+  var x = 0;
+　　function test(){
+　　　　alert(this.x);
+　　}
+　　var o={};
+　　o.x = 1;
+　　o.m = test;
+　　o.m.apply(); //0
+//apply()的参数为空时，默认调用全局对象。因此，这时的运行结果为0，证明this指的是全局对象。如果把最后一行代码修改为
+
+　　o.m.apply(o); //1
+  
+4.写出3个块级元素，3个行内元素，说明它们的区别。
+块级元素：<div>、<p>、<h1>、<table>;
+行内元素：<a>、<span>、<em>、<br>;
+
+块状元素特点：1.每个块状元素都是从新的一行开始，并且其后的元素也另起一行（一个块状元素独占一行）；
+  2.元素的高度、宽度、行高以及顶和底边距都可以设置；
+  3.元素宽度在不设置的情况下，和父元素的宽度一致，除非设置一个宽度。
+行内元素的特点：1.和其他元素在一行上；
+  2.元素的高度、宽度及顶部和底部边距不可设置；
+  3.元素的宽度就是它包含的文字或图片宽度，不可改。
