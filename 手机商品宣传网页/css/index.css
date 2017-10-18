@@ -79,9 +79,9 @@ BEM 设计模式
 .screen-1{
 	height: 800px;
 	background: url(../img/bg-screen-1.png) no-repeat center;
+	background-size: cover;
 	position: relative;
 	overflow: hidden;
-	background-size: cover;
 }
 .screen-1__heading{
 	margin: 0;
@@ -93,7 +93,7 @@ BEM 设计模式
 	padding-top: 152px;
 }
 .screen-1__heading b{
-	color:red;
+	color:#f01400;
 	font-weight: normal;
 }
 .screen-1__phone{
@@ -126,4 +126,113 @@ BEM 设计模式
 .screen-2{
 	height: 800px;
 	background-color: #fafafa;
+	position: relative;
+	overflow: hidden;
+}
+.screen-2__heading{
+	margin: 0;
+	padding:0;
+	font-weight: normal;
+	font-size: 46px;
+	color: #f01400;
+	text-align: center;
+	padding-top: 96px;
+	line-height: 46px;
+}
+.screen-2__subheading{
+	margin: 0;
+	padding:0;
+	font-weight: normal;
+	font-size: 14px;
+	color: #2c3137;
+	text-align: center;
+	padding-top: 25px;
+	line-height: 28px;
+}
+.screen-2__phone{
+	/*928x873*/
+	width:928px;
+	height: 873px;
+	background: url(../img/screen-2-phone.png) no-repeat center;
+	position: absolute;
+	left:50%;
+	margin-left: -464px;
+	bottom: -345px;
+	z-index: 2;
+}
+.screen-2__point{
+	width: 108px;
+	height: 22px;
+	padding-right: 112px;
+	font-size: 22px;
+	line-height: 22px;
+	position: absolute;
+	color: #4d555d;
+	background: url(../img/icon-point-right.png) no-repeat right;
+}
+.screen-2__point_custom_right{
+	padding:0 0 0 112px;
+	background: url(../img/icon-point-left.png) no-repeat left;
+}
+.screen-2__point_i_1{
+	top:150px;
+	left: -164px;
+}
+.screen-2__point_i_2{
+	right: 130px;
+	top: 30px;
+}
+.screen-2__point_i_3{
+	right: 30px;
+	top:330px;
+}
+
+
+/*第三屏*/
+
+.screen-3{
+	height: 800px;
+	background: url(../img/bg-screen-3.png) no-repeat center;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+}
+.screen-3__wrao{
+	width: 1200px;
+	height: auto;
+	margin: 0 auto;
+}
+.screen-3__heading{
+	font-size: 46px;
+	line-height: 46px;
+	color: #fff;
+	text-align: left;
+	padding-top: 94px;
+}
+.screen-3__subheading{
+	font-size: 14px;
+	color: #fff;
+	text-align: left;
+	padding-top: 25px;
+	line-height: 28px;
+}
+.screen-3__phone{
+	/*729x900*/
+	width:729px;
+	height: 900px;
+	background: url(../img/screen-3-phone.png) no-repeat center;
+	position: absolute;
+	right: 0;
+	top: 195px;
+	z-index: 2;
+}
+
+
+/*第四屏*/
+
+.screen-4{
+	height: 800px;
+	background-color: #fff;
+	position: relative;
+	overflow: hidden;
 }
