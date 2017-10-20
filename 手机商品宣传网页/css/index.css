@@ -197,10 +197,11 @@ BEM 设计模式
 	position: relative;
 	overflow: hidden;
 }
-.screen-3__wrao{
+.screen-3__wrap{
 	width: 1200px;
 	height: auto;
 	margin: 0 auto;
+	position: relative;
 }
 .screen-3__heading{
 	font-size: 46px;
@@ -225,6 +226,34 @@ BEM 设计模式
 	right: 0;
 	top: 195px;
 	z-index: 2;
+}
+.screen-3__features{
+	width: 320px;
+	height: 280px;
+	top: 395px;
+	left: 0;
+	position: absolute;
+}
+.screen-3__features__item{
+	width: 138px;
+	height: 118px;
+	border: 1px solid #cb7173;
+	margin: 0 20px 20px 0;
+	float: left;
+	border-radius: 3px;
+	text-align: center;
+	color: #fff;
+}
+.screen-3__features__item-number{
+	height: 36px;
+	font-size: 36px;
+	line-height: 36px;
+	padding: 28px 0 8px;
+}
+.screen-3__features__item-desc{
+	height: 14px;
+	font-size: 14px;
+	line-height: 14px;
 }
 
 
@@ -308,7 +337,67 @@ BEM 设计模式
 
 .screen-5{
 	height: 800px;
-	background-color: #fff;
+	background-color: #d9dde1; 
 	position: relative;
 	overflow: hidden;
+}
+.screen-5__bg{
+	background: url('../img/bg-screen-5.png') no-repeat center;
+	height: 433px;
+	width: 1920px;
+	background-size: contain;
+	position: absolute;
+	left: 50%;
+	margin-left: -960px;
+	bottom: -100px;
+}
+.screen-5__heading{
+	font-size: 46px;
+	color: #f01400;
+	text-align: center;
+	padding-top: 130px;
+	line-height: 46px;
+}
+.screen-5__subheading{
+	font-size: 14px;
+	color: #2c3137;
+	text-align: center;
+	padding-top: 25px;
+	line-height: 28px;
+}
+
+
+/*立即购买*/
+
+.screen-buy{
+	background: #2b333b url('../img/bg-screen-buy.png') center no-repeat;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	padding: 120px 0;
+}
+.screen-buy__button{
+	height: 80px;
+	width: 240px;
+	text-align: center;
+	line-height: 80px;
+	font-size: 24px;
+	color: #fff;
+	background-color: #f01414;
+	display: inline-block;
+	border-radius:3px;
+	transition: all .5s;
+}
+.screen-buy__button:hover{
+	box-shadow:0 0 10px #fff;
+}
+
+
+.footer{
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	color:#fff;
+	font-size: 12px;
+	background-color: #07111b;
 }

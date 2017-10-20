@@ -1,0 +1,11 @@
+.screen-1__heading{
+	transition: all 1s;
+}
+.screen-1__heading_animate_init{
+	transform:translate(0,100%);
+	opacity: 0;
+}
+.screen-1__heading_animate_done{
+	transform: translate(0,0);
+	opacity: 1;
+}
