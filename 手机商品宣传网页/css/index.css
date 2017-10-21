@@ -401,3 +401,31 @@ BEM 设计模式
 	font-size: 12px;
 	background-color: #07111b;
 }
+
+.outline{
+	position: fixed;
+	padding: 5px 10px;
+	bottom: 120px;
+	right: 0;
+	z-index: 3;
+	background-color: #fff;
+	box-shadow: 0 4px 12px rgba(0,0,0,.5)
+}
+.outline__item{
+	display: block;
+	width: 40px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	padding: 5px 0;
+	background-color: #fff;
+	margin-top: 5px;
+	color: #93999f;
+	border-top:1px solid #eee; 
+}
+.outline__item:first-child{
+	border:none;
+}
+.outline__item_status_active{
+	color: red;
+}

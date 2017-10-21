@@ -4,7 +4,34 @@ var screenAnimateElements={
 		'.screen-1__heading',
 		'.screen-1__phone',
 		'.screen-1__shadow',
-	]
+	],
+	'.screen-2' : [
+		'.screen-2__heading',
+		'.screen-2__phone',
+		'.screen-2__subheading',
+		'.screen-2__point_i_1',
+		'.screen-2__point_i_2',
+		'.screen-2__point_i_3',
+	],
+	'.screen-3' : [
+		'.screen-3__heading',
+		'.screen-3__phone',
+		'.screen-3__subheading',
+		'.screen-3__features',
+	],
+	'.screen-4' : [
+		'.screen-4__heading',
+		'.screen-4__subheading',
+		'.screen-4__type__item-i-1',
+		'.screen-4__type__item-i-2',
+		'.screen-4__type__item-i-3',
+		'.screen-4__type__item-i-4',
+	],
+	'.screen-5' : [
+		'.screen-5__heading',
+		'.screen-5__bg',
+		'.screen-5__subheading',
+	],
 };
 
 function setScreenAnimate(screenCls){
@@ -56,4 +83,8 @@ function setScreenAnimate(screenCls){
 	}
 }
 
-setScreenAnimate('.screen-1');
+for(k in screenAnimateElements){
+	setScreenAnimate(k);
+}
+
+
