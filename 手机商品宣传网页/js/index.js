@@ -104,34 +104,104 @@ var playScreenAnimateDone=function(screenCls){
 
 window.onload = function(){
 	for(k in screenAnimateElements){
+		if(k==='.screen-1'){
+			continue;
+		}
 		setScreenAnimateInit(k);
+		
 	}
 }
 
+var navItems=getAllElem('.header__nav-item');
+var outlineItems=getAllElem('.outline__item');
+
 //第二步：滚动的到哪里，就播放到哪里
 
+var switchNavItemsActive=function(idx){
+	for (var i=0;i<navItems.length;i++){
+		delCls(navItems[i],'header__nav-item_status_active');
+	}
+	addCls(navItems[idx],'header__nav-item_status_active');
+	navTip.style.left = ( idx * 70 )+'px';
+
+	for (var i=0;i<outlineItems.length;i++){
+		delCls(outlineItems[i],'outline__item_status_active');
+	}
+	addCls(outlineItems[idx],'outline__item_status_active');
+}
+
+		
 window.onscroll = function(){
 	var top = document.body.scrollTop || document.documentElement.scrollTop;
 
 	if (top>80) {
 		addCls(getElem('.header'),'header_status_black');
+		addCls(getElem('.outline'),'outline_status_in');
 	}else{
 		delCls(getElem('.header'),'header_status_black');
+		delCls(getElem('.outline'),'outline_status_in');
+		switchNavItemsActive(0);
 	}
 
-	if(top>1){
-		playScreenAnimateDone('.screen-1');
-	}
-	if(top>800*1){
+	
+	if(top>800*1-100){
 		playScreenAnimateDone('.screen-2');
+		switchNavItemsActive(1);
 	}
-	if(top>800*2){
+	if(top>800*2-100){
 		playScreenAnimateDone('.screen-3')
+		switchNavItemsActive(2);
 	}
-	if(top>800*3){
+	if(top>800*3-100){
 		playScreenAnimateDone('.screen-4')
+		switchNavItemsActive(3);
 	}
-	if(top>800*4){
+	if(top>800*4-100){
 		playScreenAnimateDone('.screen-5')
+		switchNavItemsActive(4);
 	}
 }
+
+//第三步双向定位
+
+
+var setNavJump=function (i,lib) {
+	var item=lib[i];
+	item.onclick=function(){
+		document.body.scrollTop=i*800;
+		document.documentElement.scrollTop=i*800;
+	}
+}
+
+for(var i=0;i<navItems.length;i++){
+	setNavJump(i,navItems);
+}
+for(var i=0;i<outlineItems.length;i++){
+	setNavJump(i,outlineItems);
+}
+
+//第四步滑动门特效
+
+var navTip=getElem('.header__nav-tip');
+var setTip=function(idx,lib){
+	lib[idx].onmouseover=function(){
+		navTip.style.left=(idx*70)+'px';
+	}
+	var activeIdx=0;
+	lib[idx].onmouseout=function(){
+		for(var i=0;i<lib.length;i++){
+			if(getCls(lib[i]).indexOf('header__nav-item_status_active')>-1){
+				activeIdx=i;
+				break;
+			}
+		}
+		navTip.style.left=(activeIdx*70)+'px';
+	}
+}
+for(var i=0;i<navItems.length;i++){
+	setTip(i,navItems);
+}
+
+setTimeout(function(){
+	playScreenAnimateDone('.screen-1');
+},200)

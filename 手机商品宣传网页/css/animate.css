@@ -249,9 +249,13 @@
 .header_status_black .header__nav-item{
 	color: #fff;
 }
+.header_status_black .header__nav-item_status_active{
+	color:red;	
+}
 
 /*大纲_status_in 样式*/
 .outline{
+	opacity: 0;
 	transition: all 1s;
 	transform: translate(100%,0);
 }
