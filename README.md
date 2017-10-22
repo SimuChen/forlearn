@@ -7,6 +7,6 @@ https://simuchen.github.io/forlearn/%E6%89%8B%E6%9C%BA%E5%95%86%E5%93%81%E5%AE%A
 https://simuchen.github.io/forlearn/%E8%BD%AE%E6%92%AD%E5%9B%BE/
 
 
-（console用来检查错误超级好用啊）
-大部分问题在,与;用错了，如果逻辑没有问题就注意单词是不是写错了  
+（console用来检查错误超级好用啊）<br>
+大部分问题在,与;用错了，如果逻辑没有问题就注意单词是不是写错了  <br>
 执行的命令注意顺序，如果有鼠标移动的状态改变注意位置
